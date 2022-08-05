@@ -12,6 +12,13 @@ p {
 }
 .consolemain {
     font-size: larger;
-    width: auto;
     color: brown;
+}
+
+.button{
+  text-align: center;
+}
+
+.slds-m-left_x-small{
+    text-align: center;
 }
