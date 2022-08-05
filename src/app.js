@@ -1,8 +1,8 @@
 import { LightningElement } from "lwc";
 
 export default class App extends LightningElement {
-  title = "機能一覧コンソール";
-
+  titleFunctionList = "機能一覧コンソール";
+  titleProjectTask = "プロジェクトタスク";
   showFeatures = true;
 
   /**

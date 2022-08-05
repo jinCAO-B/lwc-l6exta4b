@@ -1,13 +1,15 @@
 <template>
+
+	<lightning-button id="consolemain" variant="brand-outline" label="機能一覧コンソール画面"
+		title="Primary action with lighter look" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+
 	<div class="app slds-p-around_x-large">
-		<h1 class="slds-text-heading_large">{title}</h1>
-		<h3>機能一覧、プロジェクトタスクの一括編集が出来ます</h3>
-		<lightning-button id="consolemain" variant="brand-outline" label="機能一覧コンソール画面"
-			title="Primary action with lighter look" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+		<h1 class="slds-text-heading_large">{titleFunctionList}</h1>
+		<h3>編集が完了しましたら、保存ボタンで一括保存してください</h3>
 		<!-- Using an if statement -->
 		<template if:true={showFeatures}>
 			<div class="slds-p-top_large">
-				<h2 class="slds-text-heading_medium">Features</h2>
+				<h2 class="slds-text-heading_medium">機能一覧</h2>
 
 				<!-- Using a for statement -->
 				<template for:each={features} for:item='feature'>
@@ -19,18 +21,31 @@
 				</template>
 			</div>
 		</template>
-
-		<h2 class="slds-text-heading_medium slds-p-top_large">Resources</h2>
-		<a href="https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.get_started_introduction">
-			Developer Guide
-		</a><br/>
-		<a href="https://developer.salesforce.com/docs/component-library/overview/components">Component Reference</a>
-
 	</div>
 
-	<lightning-button id="consolesave" variant="brand-outline" label="保存" title="Primary action with lighter look"
-		onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
-	<lightning-button id="consolecancel" variant="brand-outline" label="キャンセル" title="Primary action with lighter look"
-		onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+	<div class="app slds-p-around_x-large">
+		<h1 class="slds-text-heading_large">{titleProjectTask}</h1>
+		<h3>編集が完了しましたら、保存ボタンで一括保存してください</h3>
+		<!-- Using an if statement -->
+		<template if:true={showFeatures}>
+			<div class="slds-p-top_large">
+				<h2 class="slds-text-heading_medium">機能一覧</h2>
+
+				<!-- Using a for statement -->
+				<template for:each={features} for:item='feature'>
+					<c-child label={feature.label} key={feature.label}>
+
+						<!-- Specifying the 'icon' slot for c-child -->
+						<lightning-icon icon-name={feature.icon} size="x-small" slot="icon"></lightning-icon>
+					</c-child>
+				</template>
+			</div>
+		</template>
+	</div>
+
+	<lightning-button id="consolesave" variant="brand-outline" label="保存" onclick={handleClick}
+		class="slds-m-left_x-small"></lightning-button>
+	<lightning-button id="consolecancel" variant="brand-outline" label="キャンセル" onclick={handleClick}
+		class="slds-m-left_x-small"></lightning-button>
 
 </template>
