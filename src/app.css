@@ -16,7 +16,10 @@ p {
 }
 
 .button{
+    width: 20px;
   text-align: center;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 .slds-m-left_x-small{

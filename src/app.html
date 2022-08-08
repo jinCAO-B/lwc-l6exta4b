@@ -26,14 +26,10 @@
 			<div class="slds-p-top_large">
 
 				<lightning-input type="text" label="機能名" placeholder="３０文字以内" required></lightning-input>
-				<!-- Using a for statement -->
-				<template for:each={features} for:item='feature'>
-					<c-child label={feature.label} key={feature.label}>
+				<lightning-input type="text" label="プロジェクトタスク" placeholder="" required></lightning-input>
+				<lightning-input type="text" label="機能概要" placeholder="" required></lightning-input>
+				<lightning-input type="text" label="実装難易度" placeholder="" required></lightning-input>
 
-						<!-- Specifying the 'icon' slot for c-child -->
-						<lightning-icon icon-name={feature.icon} size="x-small" slot="icon"></lightning-icon>
-					</c-child>
-				</template>
 			</div>
 		</template>
 	</div>
